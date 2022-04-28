@@ -1,0 +1,16 @@
+<view class="about-page">
+    <view class="about-page-span">
+    </view>
+    <view class="about-page-box">
+        <view class="about-page-box-left">开发者</view>
+        <view  class="about-page-box-right">Johnny</view>
+    </view>
+    <view class="about-page-box">
+        <view class="about-page-box-left">数据来源</view>
+        <view class="about-page-box-right">NextDay</view>
+    </view>
+    <!-- <view class="about-page-box">
+        <view class="about-page-box-left">打赏</view>
+    </view> -->
+</view>
+

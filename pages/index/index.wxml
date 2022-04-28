@@ -1,0 +1,74 @@
+
+<view class="container">
+  <view class="swiper" bindtouchstart="touchStart" bindtouchmove="touchMove">
+    <swiper current="{{calendarData.length-1}}" bindchange="bindchange">
+      <block wx:for="{{calendarData}}" wx:key="dateKey">
+        <swiper-item>
+            <view  
+            class="swiper-item" 
+            style="background-image: url({{isIphoneX?item.images.iphoneX:item.images.big}});">
+                <view 
+                    class="calenday-day"
+                    >{{item.dateObj.date}}</view>
+                <view 
+                    class="calenday-weekday" 
+                    style="top: {{isIphoneX ? '62%': '65%'}}"
+                >{{item.dateObj.month}}. {{item.dateObj.week}} {{item.event && ', ' + item.event}}</view>
+                <view class="calendar-address-text">
+                    <view class="calendar-address">{{item.geo.reverse}}</view>
+                    <view class="calendar-text" style="background-color: {{item.colors.background}}">{{item.text.short}}</view>
+                </view>
+                <view  class="calendar-author">
+                    {{item.author.name && '@' + item.author.name}}
+                </view>  
+            </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="other" wx:if="{{isShowOther}}" bindtap="touchOther">
+        <view class="other-footer" style="background-color: {{calendarData[current].colors.background}}">
+            <button 
+                open-type="share"  
+                size="mini"  
+                class="other-footer-share">
+                <image src="../../assets/images/share1.png" />
+            </button>
+            <button 
+                catchtouchmove="catchTouchMove"
+                bindtouchend="touchEnd"
+                size="mini"  
+                class="other-footer-setup"  
+                catchtap="bindsetup">
+                <image src="../../assets/images/setup1.png" />
+            </button>
+        </view>
+    </view>
+  </view>
+</view>
+<i-drawer mode="bottom" visible="{{showDrawer}}" bind:close="toggleDrawer">
+  <view class="drawer-container">
+      <view class="drawer-content">
+        <view class="drawer-title">更多</view>
+        <view class="drawer-items">
+            <button 
+                class="drawer-items-box drawer-items-box-button"
+                open-type="contact" 
+                bindcontact="handleContact" 
+                session-from="sessionFrom">
+                <view>意见反馈</view>
+                <image src="../../assets/images/arrow.png" />
+            </button>
+            <!-- <view class="drawer-items-box"  bindtap="handleAbout">
+                <view>开发者</view>
+                <view class="drawer-items-box-desc">Johnny</view>
+            </view> -->
+            <view class="drawer-items-box">
+                <view>开源地址</view>
+                <view class="drawer-items-box-desc">
+                    关注「随朱波流」回复关键字nextday
+                </view>
+            </view>
+        </view>
+      </view>
+  </view>
+</i-drawer>

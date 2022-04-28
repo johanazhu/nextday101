@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "i-drawer": "/components/drawer/index"
+    }
+}
+
