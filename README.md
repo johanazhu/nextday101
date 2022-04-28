@@ -31,7 +31,7 @@
 
 ### GIF动态
 
-![GIF](./screenshot/GIF.gif)
+![GIF](https://s2.loli.net/2022/04/28/tYJXub8ZpBd7mkq.gif)
 
 ### 截图
 
@@ -67,4 +67,4 @@ A：原生小程序语言开发
 
 ## License
 
-MIT
+[MIT](https://github.com/johanazhu/nextday101/blob/master/LICENSE)
